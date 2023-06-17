@@ -1,5 +1,5 @@
 name: rjd-bcftools
-title: rjd-bcftools
+title: BCFtools
 version: '1.7'
 summary:  BCFtools for Variant Call Format
 description: |
@@ -37,14 +37,14 @@ apps:
 #   XDG_CONFIG_HOME: $SNAP_USER_DATA/.config
 
 # The `layout` ensures that files can be found by applications where they are expected by the toolkit or application.
-layout:
+# layout:
   # Other, generally useful paths
-  /etc/fonts:
-    bind: $SNAP/etc/fonts
-  /usr/share/fonts:
-    bind: $SNAP/usr/share/fonts
-  /usr/share/icons:
-    bind: $SNAP/usr/share/icons
+  # /etc/fonts:
+  #   bind: $SNAP/etc/fonts
+  # /usr/share/fonts:
+  #   bind: $SNAP/usr/share/fonts
+  # /usr/share/icons:
+  #   bind: $SNAP/usr/share/icons
 
 bcftools:
 #        source: https://github.com/samtools/bcftools.git
@@ -89,8 +89,7 @@ bcftools:
              - libgfortran5 # Recommended by snapcraft
              - liblapack-doc #Library of linear algebra routines 3 - documentation
              - liblapack3 #Library of linear algebra routines 3 - shared version
-             - liblapacke #Library of linear algebra routines 3 - C lib shared version
-             - liblzma5
+             - liblapacke #Library of linear algebra routines 3 - C lib shared version             - liblzma5
              - libperl5.34
              - libquadmath0 # Recommended by snapcraft
              - libtmglib3 #test matrix generators of LAPACK - shared version
