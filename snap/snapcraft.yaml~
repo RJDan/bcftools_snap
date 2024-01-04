@@ -4,17 +4,17 @@ version: '1.7'
 summary:  BCFtools for Variant Call Format
 description: |
       " BCFtools is a program for variant calling and manipulating files in the Variant Call Format (VCF) and its binary counterpart BCF."
-     *  The description above refers to the software: http://samtools.github.io/bcftools/howtos/index.html
+      *  The description above refers to the software: http://samtools.github.io/bcftools/howtos/index.html
       * I have packaged the software as a snap for **personal use** but I have made the snap available for free.
       * I do not maintain the software itself. I only maintain the snap packaging. Please report software bugs to the maintainers.
       * Report snap-specific bugs to me.
-        * I _DO_ use this snap. It _has been superficially tested_ on my system. I __do not__ track the latest version.
-        * __This snap works in devmode only.__
-        * Packaging 'style' : tarball build for linux machines.
-        * License refers to the original software, not the snapcraft 'code'.
-        * More info:
-        * Run the following to rename the snap
-        ```sudo snap alias rjd-bcftools.bcftools bcftools```
+      * I _DO_ use this snap. It _has been superficially tested_ on my system. I __do not__ track the latest version.
+      * __This snap works in devmode only.__
+      * Packaging 'style' : tarball build for linux machines.
+      * License refers to the original software, not the snapcraft 'code'.
+      * More info:
+      * Run the following to rename the snap
+      ```sudo snap alias rjd-bcftools.bcftools bcftools```
 
 website: https://github.com/RJDan/bcftools_snap
 source-code : https://github.com/RJDan/bcftools_snap
@@ -46,7 +46,8 @@ apps:
   # /usr/share/icons:
   #   bind: $SNAP/usr/share/icons
 
-bcftools:
+parts:
+    bcftools:
 #        source: https://github.com/samtools/bcftools.git
 #        source-type: git
 #        source-tag: "116a87c"
@@ -71,14 +72,14 @@ bcftools:
                 - liblzma-dev
                 - libperl-dev
                 - libssl-dev
-                -zlib1g-dev
+                - zlib1g-dev
         stage-packages:
              - autoconf
              - automake
              - gcc
              - libgsl27
-              - make
-              - perl
+             - make
+             - perl
              - bzip2
              - libatlas-doc #Automatically Tuned Linear Algebra Software, documentation
              - libatlas3-base #Automatically Tuned Linear Algebra Software, generic shared
@@ -97,11 +98,11 @@ bcftools:
         # stage-snaps:
         #      - rjd-hslib
         override-build: |
-                          cd ${SNAPCRAFT_PART_SRC}/
+                         cd ${SNAPCRAFT_PART_SRC}/
                          # snap alias rjd-hslib.hslib hslib
-                          autoheader && autoconf && ./configure --enable-libgsl --enable-perl-filters
-                          cd ${CRAFT_PROJECT_DIR}/
-                          snapcraft build
+                         autoheader && autoconf && ./configure --enable-libgsl --enable-perl-filters
+                         cd ${SNAPCRAFT_PROJECT_DIR}/
+                         snapcraftctl build
         # filesets:
         #       bcftools.out:
         #                   - toy.map
