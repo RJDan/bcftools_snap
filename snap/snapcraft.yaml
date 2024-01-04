@@ -30,6 +30,7 @@ apps:
         command: bcftools
         plugs:
           - home
+          - removeable-media
 
 # environment:
 #   # XDG config
@@ -115,3 +116,5 @@ parts:
         organize:
             "Icon_230417.svg" : snap/Icon_230417.svg
             "bin/bcftools" : /usr/local/bin/bcftools
+        stage:
+        prime:
