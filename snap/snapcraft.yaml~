@@ -25,6 +25,8 @@ grade: stable # devel
 confinement: strict # strict, devmode, classic
 license:  GPL-3.0-only
 base: core22 # the base snap is the execution environment for this snap
+architectures:
+      - amd64
 
 apps:
     bcftools:
@@ -32,6 +34,7 @@ apps:
         plugs:
           - home
           - removable-media
+          
 
 # environment:
 #   # XDG config
