@@ -4,22 +4,22 @@ version: '1.7'
 summary:  BCFtools for Variant Call Format
 description: |
       " BCFtools is a program for variant calling and manipulating files in the Variant Call Format (VCF) and its binary counterpart BCF."
-      *  The description above refers to the software: http://samtools.github.io/bcftools/howtos/index.html
+      *  The description above refers to the software: http://samtools.github.io/bcftools
       * I have packaged the software as a snap for **personal use** but I have made the snap available for free.
       * I do not maintain the software itself. I only maintain the snap packaging. Please report software bugs to the maintainers.
       * Report snap-specific bugs to me.
-      * I _DO_ use this snap. It _has been superficially tested_ on my system. I __do not__ track the latest version.
-      * __This snap works in devmode only.__
+      * I _DO_ use this snap. It _HAS BEEN SUPERFICIALLY_ tested on my system. I __do not__ track the latest version.
+      * __This snap works. If you have problems with it, please contact me.__
       * Packaging 'style' : tarball build for linux machines.
       * License refers to the original software, not the snapcraft 'code'.
-      * More info:
       * Run the following to rename the snap
-      ```sudo snap alias rjd-bcftools.bcftools bcftools```
+          ```sudo snap alias rjd-bcftools.bcftools bcftools```
+      * More info:
 
 website: https://github.com/RJDan/bcftools_snap
 source-code : https://github.com/RJDan/bcftools_snap
 contact: https://github.com/RJDan/bcftools_snap
-#icon: Icon_230417.svg
+icon: Icon_230417.svg
 
 grade: stable # devel
 confinement: strict # strict, devmode, classic
@@ -35,21 +35,10 @@ apps:
           - home
           - removable-media
           
-
 # environment:
 #   # XDG config
 #   XDG_CACHE_HOME:  $SNAP_USER_COMMON/.cache
 #   XDG_CONFIG_HOME: $SNAP_USER_DATA/.config
-
-# The `layout` ensures that files can be found by applications where they are expected by the toolkit or application.
-# layout:
-  # Other, generally useful paths
-  # /etc/fonts:
-  #   bind: $SNAP/etc/fonts
-  # /usr/share/fonts:
-  #   bind: $SNAP/usr/share/fonts
-  # /usr/share/icons:
-  #   bind: $SNAP/usr/share/icons
 
 parts:
     bcftools:
@@ -118,5 +107,5 @@ parts:
         # prime:
         #   - $bcftools.out
         organize:
-#            "Icon_230417.svg" : snap/Icon_230417.svg
+            "Icon_230417.svg" : snap/Icon_230417.svg
             "bin/bcftools" : usr/local/bin/bcftools
